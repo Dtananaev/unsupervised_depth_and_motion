@@ -31,13 +31,14 @@ class CreateUnsupervisedSfmDatasetList:
         sequences_list = sorted(glob.glob(sequences))
         dataset_list = []
 
-        for seq in sequences_list:
+        for idx, seq in enumerate(sequences_list):
             images_string = os.path.join(seq, "*.jpg")
             images_list = sorted(glob.glob(images_string))
             images_list = np.asarray([self.remove_prefix(x, self.dataset_dir) for x in images_list])
 
             for row in range(1, len(images_list)-1):
                 data_sample = [images_list[i] for i in range(row - 1, row + 1)]
+                data_sample.append(str(idx))
                 dataset_list.append(";".join(data_sample))
         dataset_filename = os.path.join(self.dataset_dir, data_list_name)
         save_dataset_list(dataset_filename, dataset_list)

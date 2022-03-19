@@ -2,7 +2,7 @@
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/Dtananaev/unsupervised_depth_and_motion/blob/master/LICENSE.md) 
 
-This is reimplementation of the paper [Unsupervised Monocular Depth Learning in Dynamic Scense](https://arxiv.org/abs/2010.16404)
+This is reimplementation of the paper [Unsupervised Monocular Depth Learning in Dynamic Scenes](https://arxiv.org/abs/2010.16404)
 
 ## Installation
 For ubuntu 18.04 install necessary dependecies:
@@ -44,5 +44,7 @@ In order to create dataset list apply:
 cd depth_and_motion
 python create_datalist.py --dataset_dir <path_to_the_dataset_folder>
 ```
-This will creates the pair of images list for self-supervised training.
+This will creates the pair of images and the corresponding number for sequence folder list for self-supervised training.
+Note: Each sequnce folder assumed to be separate video, therefore it will learn its own intrinsics
+
 

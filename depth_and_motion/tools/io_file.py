@@ -2,6 +2,7 @@
 # Author: Denis Tananaev
 # Date: 29.03.2020
 #
+from re import X
 import numpy as np
 import tensorflow as tf
 import cv2
@@ -44,9 +45,17 @@ def load_dataset_list(dataset_dir, dataset_file, delimiter=";"):
     with open(file_path) as f:
         dataset_list = f.readlines()
     dataset_list = [x.strip().split(delimiter) for x in dataset_list]
-    dataset_list = [list(map(add_path_prefix, x)) for x in dataset_list]
 
-    return dataset_list
+    final_list = []
+    for x in dataset_list:
+        data_sample = []
+        for idx, data in enumerate(x):
+            if idx < len(x)-1:
+                data_sample.append(add_path_prefix(data))
+            else: # the last part is video number for calibration initialization therefore we don't need add path
+                data_sample.append(data)
+        final_list.append(data_sample)
+    return final_list
 
 
 def save_dataset_list(dataset_file, data_list):
