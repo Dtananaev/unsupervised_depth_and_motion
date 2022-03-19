@@ -46,5 +46,8 @@ python create_datalist.py --dataset_dir <path_to_the_dataset_folder>
 ```
 This will creates the pair of images and the corresponding number for sequence folder list for self-supervised training.
 Note: Each sequnce folder assumed to be separate video, therefore it will learn its own intrinsics
-
+In order to run training:
+```
+python train.py
+```
 
