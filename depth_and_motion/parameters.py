@@ -3,11 +3,6 @@
 # Date: 19.02.2021
 #
 
-from depth_and_motion.tools.io_file import save_to_json
-from depth_and_motion.tools.optimizer_settings import OptimizerSettings, SchedulerSettings
-import os
-
-
 class Parameters(object):
     """
     The class contains experiment parameters.
@@ -17,14 +12,14 @@ class Parameters(object):
 
 
         self.settings = {
-            # Experiment info for pdf report
-            "experiment_info": self.experiment_info,
+
             # The directory for checkpoints
             "dataset_dir": "/media/denis/SSD_A/ssai_dataset",
             "data_format": "channels_last", # channels_first not yet implemented
-            "data_height": 256, # 128,
-            "data_width":  512, #448,
-            "batch_size": 16,
+            "data_height": 128,
+            "data_width":  448,
+            "batch_size": 4,
+            "learning_rate": 1e-4,
             "depth_weight_decay": 0.0,
             "motion_weight_decay": 0.0,
             # The checkpoint related
@@ -60,10 +55,6 @@ class Parameters(object):
                 'motion_smoothing': 1.0,
                 'motion_sparsity': 0.4,
                 }
-        # Set special parameters
-        self.settings["optimizer"] = OptimizerSettings.adam_optimizer(beta_1=0.9)
-        self.settings["scheduler"] = SchedulerSettings.no_scheduler(initial_learning_rate=2e-4)
-
         # Automatically defined during training parameters
         self.settings["train_size"] = None  # the size of train set
         self.settings["val_size"] = None  # the size of val set
