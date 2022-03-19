@@ -15,27 +15,6 @@ class Parameters(object):
 
     def __init__(self):
 
-        self.experiment_info = {
-            # This is unique name for report folder
-            "experiment_name": "Default depth and motion experiment.",
-            # Give description of the experiment e.g.
-            # """
-            # Augmentation for inception v1 model.
-            # The goal: This experiments goal is to check how inception_v1 network
-            # works with different data augmentations.
-            # The main settings:
-            # 1. Used augmentations "flip_left_right", "zoom", "random_color"
-            # 2. Used restarts.
-            # """
-            "authors": "Denis Tananaev",
-            "description": """
-        The goal: The goal to check that everything works.
-        The main settings:
-        1. no scheduler
-        2. Adam optimizer
-        Dataset: Random videos.
-        """,
-        }
 
         self.settings = {
             # Experiment info for pdf report

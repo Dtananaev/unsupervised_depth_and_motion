@@ -90,4 +90,3 @@ if __name__ == "__main__":
     for samples in tqdm(train_dataset.dataset, total=train_dataset.num_it_per_epoch):
         img_first, img_second, idx = samples
         print(f"first {img_first.shape}, second {img_second.shape} idx {idx}")
-        input()
