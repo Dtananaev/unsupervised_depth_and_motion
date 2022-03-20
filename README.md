@@ -1,6 +1,6 @@
 #  Unsupervised Depth And Motion Estimation
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/Dtananaev/unsupervised_depth_and_motion/blob/main/LICENSE.md) 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/Dtananaev/unsupervised_depth_and_motion/blob/main/LICENSE) 
 
 This is reimplementation of the paper [Unsupervised Monocular Depth Learning in Dynamic Scenes](https://arxiv.org/abs/2010.16404)
 
